@@ -2,7 +2,7 @@ package com.twj.math.enums;
 
 public enum Difficulty {
     EASY(21, 99, 19, 89),
-    INTERMEDIATE(101, 999, 99, 988),
+    INTER(101, 999, 99, 988),
     HARD(1001, 9999, 199, 9888);
 
     private int front;

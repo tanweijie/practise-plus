@@ -8,17 +8,18 @@ public class Main {
     public static void main(String[] args) {
 
         Subtraction sub = new Subtraction();
+        int numQnsToGen = 1000;
 
-        sub.normalSubtraction(5, Difficulty.EASY);
-        sub.normalSubtraction(5, Difficulty.INTERMEDIATE);
-        sub.normalSubtraction(5, Difficulty.HARD);
+        sub.normalSubtraction(numQnsToGen, Difficulty.EASY);
+        sub.normalSubtraction(numQnsToGen, Difficulty.INTER);
+        sub.normalSubtraction(numQnsToGen, Difficulty.HARD);
 
-        sub.missingMiddleNumber(5);
+        sub.missingMiddleNumber(numQnsToGen);
 
         Equality equality = new Equality();
-        equality.createQuestions(5, Difficulty.EASY);
-        equality.createQuestions(5, Difficulty.INTERMEDIATE);
-        equality.createQuestions(5, Difficulty.HARD);
+        equality.createQuestions(numQnsToGen, Difficulty.EASY);
+        equality.createQuestions(numQnsToGen, Difficulty.INTER);
+        equality.createQuestions(numQnsToGen, Difficulty.HARD);
 
     }
 }

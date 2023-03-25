@@ -16,7 +16,7 @@ public class DifficultyUtil {
         return random.ints(difficulty.getMiddleFront(), minuend - 1).findFirst().getAsInt();
     }
 
-    public static int getaddend(Difficulty difficulty) {
+    public static int getAddend(Difficulty difficulty) {
         Random random = new Random();
         return random.ints(difficulty.getFront(), difficulty.getBack()).findFirst().getAsInt();
     }

@@ -7,7 +7,6 @@ import com.twj.util.DifficultyUtil;
 import com.twj.vo.Question;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,7 +17,6 @@ public class Subtraction {
 
     public void normalSubtraction(int numQns, Difficulty difficulty) {
 
-        List<String> lAnswer = new ArrayList<>();
         List<Question> lQns = new ArrayList<>();
 
         log.info("\nQuestions");
@@ -30,23 +28,13 @@ public class Subtraction {
 
             log.info("{}.\t{} - {} = _", qn, bigNum, middleNum);
             lQns.add(new Question(qn, String.format("%d - %d = %s", bigNum, middleNum, DisplayConstants.BLANK_LINE), "" + ans));
-            lAnswer.add(qn + "\t- " + ans);
         });
 
-        log.info("\nAnswers");
-        lAnswer.forEach(ans -> log.info(ans));
-
-        try {
-            PdfGenerator.genPdf("Subtraction", lQns, "./subtraction-" + difficulty.name() + ".pdf");
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        PdfGenerator.genPdf("Subtraction", lQns, "./pdf/subtraction-" + difficulty.name() + ".pdf");
     }
 
     public void missingMiddleNumber(int numQns) {
 
-        List<String> lAnswer = new ArrayList<>();
         List<Question> lQns = new ArrayList<>();
 
         log.info("\nQuestions");
@@ -68,11 +56,6 @@ public class Subtraction {
             lQns.add(new Question(qnNum, String.format("%d - %s = %d", bigNum, maskedMiddleNumber, ans), "" + ans));
         });
 
-        try {
-            PdfGenerator.genPdf("Subtraction - Missing Middle Number", lQns, "./subtraction-mmn.pdf");
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        PdfGenerator.genPdf("Subtraction - Missing Middle Number", lQns, "./pdf/subtraction-mmn.pdf");
     }
 }
