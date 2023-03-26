@@ -20,4 +20,15 @@ public class DifficultyUtil {
         Random random = new Random();
         return random.ints(difficulty.getFront(), difficulty.getBack()).findFirst().getAsInt();
     }
+
+    public static int getDividend(Difficulty difficulty) {
+        Random random = new Random();
+        return random.ints(difficulty.getFront(), difficulty.getBack()).findFirst().getAsInt();
+    }
+
+    public static int getDivisor(Difficulty difficulty) {
+        Random random = new Random();
+        return random.ints(difficulty.getMiddleFront(), difficulty.getMiddleEnd()).findFirst().getAsInt();
+    }
+
 }
