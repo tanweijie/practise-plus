@@ -1,4 +1,4 @@
-package com.twj.math.enums.equality;
+package com.twj.math.equality;
 
 import com.twj.math.constants.DisplayConstants;
 import com.twj.math.enums.Difficulty;

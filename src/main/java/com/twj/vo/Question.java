@@ -6,6 +6,17 @@ public class Question {
     private String qn;
     private String answer;
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "qn='" + qn + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
+    }
+
+    public Question() {
+    }
+
     public Question(int qnNum, String qn, String answer) {
         this.qnNum = qnNum;
         this.qn = qn;
